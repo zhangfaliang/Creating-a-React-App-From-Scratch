@@ -1,0 +1,6 @@
+/* While we’re still here, I did mention that webpack also processes CSS (and we are requiring it our component). Let’s add a really simple stylsheet to the src directory.
+虽然我们仍然在这里，但我确实提到webpack也处理CSS（并且我们要求它是我们的组件）。让我们在src目录中添加一个非常简单的样式表。 */
+.App{
+  margin:1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
