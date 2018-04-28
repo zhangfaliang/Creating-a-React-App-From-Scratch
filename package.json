@@ -1,0 +1,27 @@
+{
+  "name": "funny",
+  "version": "1.0.0",
+  "description": "funny object",
+  "main": "index.js",
+  "repository": "https://github.com/zhangfaliang/funny.git",
+  "author": "shiny <985324428@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode development"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cooking-cli": "1.1.4",
+    "css-loader": "^0.28.11",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
