@@ -1,6 +1,6 @@
-const path = require('path')
-const webpack = require('webpack')
-const bundlePath = path.resolve(__dirname,'/dist/')
+const path = require('path');
+const webpack = require('webpack');
+const bundlePath = path.resolve(__dirname,'/dist/');
 
 module.exports = {
   entry:'./src/index.js',// tells Webpack where our application starts and where to start bundling our files
@@ -16,13 +16,6 @@ module.exports = {
           }
         }
     },
-      {//由于我们不是预处理或后处理CSS，因此我们只需确保将style-loader和css-loader添加到use属性。为了工作，css-loader需要style-loader。装载器是使用属性的简写，当只使用一个装载器时。
-        test:/\.css/,
-        use:[
-          'style-loader',
-          'css-loader'
-        ]
-      }
 
     ]
   },
@@ -31,4 +24,7 @@ module.exports = {
     publicPath:bundlePath,
     filename:'bundle.js'//输出属性告诉Webpack将我们的捆绑代码放在哪里。 publicPath属性指定了该软件包应该进入的目录，并且还告诉webpack-dev-server从哪里提供文件。
   },
+  plugins:[
+   
+  ]
 }
