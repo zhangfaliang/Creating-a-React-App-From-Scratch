@@ -30,11 +30,22 @@ module.exports = merge(common,{
       new OptimizeCSSAssetsPlugin({})
     ]
   },
+  output:{
+    filename:'[name].[chunkhash].js'
+  },
   plugins:[
     new MiniCssExtractPlugin({
       filename: "[name].[chunkhash].css",
       chunkFilename: "[id].[chunkhash].css"
     }),
-    new HTMLWebpackPlugin()
+    
+    new HTMLWebpackPlugin({
+      title:'test html-webpack-plugin',
+      template: 'src/index.html',
+      minify: { collapseWhitespace: true },
+      inject: true,
+      production: true,
+      favicon:''
+    })
   ]
 })
