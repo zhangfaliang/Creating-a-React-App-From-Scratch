@@ -1,3 +1,5 @@
 dist/
 node_modules/
-yarn-error.log
+*.log  # 所有以 '.log' 为后缀的文件都屏蔽掉
+.idea # '.idea' 为后缀的文件都屏蔽掉
+.DS_StoreorThumbs.db
