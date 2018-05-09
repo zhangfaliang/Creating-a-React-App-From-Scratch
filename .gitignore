@@ -1,5 +1,17 @@
 dist/
 node_modules/
-*.log  # 所有以 '.log' 为后缀的文件都屏蔽掉
-.idea # '.idea' 为后缀的文件都屏蔽掉
+yarn-error.log  
+.idea 
 .DS_StoreorThumbs.db
+yarn-error.lock
+.gitignore
+*.json
+#以斜杠“/”开头表目录
+
+#以星号“*”通配多字符
+
+#以问号“?”通配单字符
+
+##以方括号“[]”包含单个字符的匹列表
+
+#以叹号“!”对匹配结果反
