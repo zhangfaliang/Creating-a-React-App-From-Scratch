@@ -15,11 +15,24 @@ module.exports = merge(common,{
         test:/\.css$/,
         use:[
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: (loader) => [
+                require('postcss-import')(),
+                require('postcss-cssnext')(),
+                require('autoprefixer')(),
+                require('cssnano')()
+              ]
+            }
+          }
         ]
       }
     ]
   },
+  //When️当单独使用postcss-loader（不使用css-loader）时，不要在CSS中使用@import，因为这会导致相当臃肿的软件包
   optimization: {
     minimizer: [
       new UglifyJsPlugin({

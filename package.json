@@ -12,7 +12,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "autoprefixer": "^8.4.1",
     "cooking-cli": "1.1.4",
+    "cssnano": "^3.10.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
