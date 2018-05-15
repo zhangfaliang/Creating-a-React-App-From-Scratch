@@ -5,4 +5,12 @@
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+  background-image: url('../asset/redpacket.png')
+}
+.comein{
+  background-image: url('../asset/comein.png')
+}
+.redpacket{
+  background-image: url('../asset/redpacket.png')
+
 }

@@ -1,9 +1,10 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const postcssSprites = require ('postcss-sprites')
 
 const common = require('./webpack.common.js')
 
@@ -15,23 +16,26 @@ module.exports = merge(common,{
         test:/\.css$/,
         use:[
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          { loader: 'css-loader', options: { 
+            importLoaders: 1,
+          } },
           {
             loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: (loader) => [
-                require('postcss-import')(),
-                require('postcss-cssnext')(),
-                require('autoprefixer')(),
-                require('cssnano')()
-              ]
-            }
           }
         ]
       }
     ]
   },
+  // postcsss: function () {
+  //   return [postcssSprites(
+  //     {	stylesheetPath: './src',
+  //        spritePath: './src/images/gen/sprite.png',
+  //        retina: true, 
+  //        padding: 3, 
+  //        filterBy: function(image){return /\/sp\//gi.test(image.url)}
+  //     }
+  //   )]
+  // },
   //When️当单独使用postcss-loader（不使用css-loader）时，不要在CSS中使用@import，因为这会导致相当臃肿的软件包
   optimization: {
     minimizer: [
@@ -48,8 +52,8 @@ module.exports = merge(common,{
   },
   plugins:[
     new MiniCssExtractPlugin({
-      filename: "[name].[chunkhash].css",
-      chunkFilename: "[id].[chunkhash].css"
+      filename: '[name].[chunkhash].css',
+      chunkFilename: '[id].[chunkhash].css'
     }),
     
     new HTMLWebpackPlugin({

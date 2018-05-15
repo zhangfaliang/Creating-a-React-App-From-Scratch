@@ -15,11 +15,15 @@
     "autoprefixer": "^8.4.1",
     "cooking-cli": "1.1.4",
     "cssnano": "^3.10.0",
+    "file-loader": "^1.1.11",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
+    "postcss-sprite": "^2.2.1",
+    "postcss-sprites": "^4.2.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "sugarss": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

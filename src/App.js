@@ -7,6 +7,10 @@ class App extends PureComponent {//浅比较 控制刷线组件
   render() {
     return (
       <div className='App'>
+        <div className="comein">
+        </div>
+        <div className="redpacket">
+        </div>
         <h5>Hello ,World! </h5>
       </div>
     );
